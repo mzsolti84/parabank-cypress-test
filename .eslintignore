@@ -1,0 +1,5 @@
+node_modules
+dist
+cypress/support/*.*
+cypress/testClass/*.*
+cypress/e2e/depricated/**/*.*

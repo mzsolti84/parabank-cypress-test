@@ -1,0 +1,107 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "chai-friendly",
+    "cypress",
+    "prettier"
+  ],
+  "parserOptions": {
+    "tsconfigRootDir": "./",
+    "project": [
+      "./tsconfig.json"
+    ]
+  },
+  "globals": {
+    "cy": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    }
+  },
+  "extends": [
+    "prettier",
+    "plugin:cypress/recommended",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:chai-friendly/recommended"
+  ],
+  "rules": {
+    "cypress/no-assigning-return-values": "off",
+    "cypress/no-unnecessary-waiting": "error",
+    "cypress/assertion-before-screenshot": "warn",
+    "cypress/no-force": "off",
+    "cypress/no-async-tests": "error",
+    "cypress/no-pause": "error",
+    "no-unused-expressions": "off",
+    "chai-friendly/no-unused-expressions": "warn",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-var-requires": "warn",
+    "@typescript-eslint/no-unsafe-argument": "off",
+    "@typescript-eslint/no-namespace": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "interface",
+        "format": [
+          "PascalCase"
+        ],
+        "custom": {
+          "regex": "^I[A-Z]",
+          "match": true
+        }
+      },
+      {
+        "selector": "variableLike",
+        "format": [
+          "camelCase",
+          "UPPER_CASE"
+        ]
+      }
+    ],
+    "newline-per-chained-call": [
+    "off",
+    {
+      "ignoreChainWithDepth": 2
+    }
+    ],
+    "@typescript-eslint/member-delimiter-style": [
+      "error",
+      {
+        "multiline": {
+          "delimiter": "none",
+          "requireLast": true
+        },
+        "singleline": {
+          "delimiter": "semi",
+          "requireLast": false
+        }
+      }
+    ],
+    "@typescript-eslint/explicit-function-return-type": "warn",
+    "@typescript-eslint/no-explicit-any": [
+      "off"
+    ],
+    "@typescript-eslint/no-inferrable-types": [
+      "warn",
+      {
+        "ignoreProperties": true,
+        "ignoreParameters": true
+      }
+    ]
+  }
+}

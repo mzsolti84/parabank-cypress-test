@@ -88,18 +88,6 @@ export const getBackendUrl = (endPoints: string): string => {
   return baseUrl + EndPointsEnum[endPoints]
 }
 
-export const goNextPage = () => {
-  cy.get("@nextButton")
-    .invoke("prop", "disabled")
-    .then((val) => {
-      cy.log(globalCount.toString() + ". oldal")
-      if (val == true) {
-        cy.get("@nextButton").should("have.prop", "disabled")
-        return
-      } else {
-        globalCount++
-        cy.get("@nextButton").click()
-      }
-      goNextPage()
-    })
-}
+ export const xmlProperty = (xml: string, property: string) => {
+    return Cypress.$(Cypress.$.parseXML(xml)).find(property).text()
+  }

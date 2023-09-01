@@ -1,4 +1,4 @@
-import { Then, Given } from "@badeball/cypress-cucumber-preprocessor"
+import { Then, Given, DataTable } from "@badeball/cypress-cucumber-preprocessor"
 
 Then("I check the next html element: {string}", (item: string) => {
   cy.get(item).should("be.exist")
@@ -38,4 +38,19 @@ Then("I check the {string} text in the next html element: {string}", (text: stri
 Then("I check the next link: {string}", (text: string) => {
   cy.get("a").contains(text).should("be.exist")
   cy.get("a").contains(text).invoke("prop", "href").should("not.be.empty")
+})
+
+Then("I check the main menu items", (table: DataTable) => {
+  const tableCount = table.hashes().length
+
+  cy.get(`div[id="leftPanel"]`)
+    .find("ul")
+    .within(() => {
+      table.hashes().forEach((item) => {
+        cy.contains("li", item.menu).as("menuItem")
+        cy.get("@menuItem").find("a").invoke("prop", "href").should("not.be.empty")
+      })
+    })
+
+  cy.get(`div[id="leftPanel"]`).find("ul").find("li").should("have.length", tableCount)
 })

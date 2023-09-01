@@ -10,6 +10,10 @@
 
 ## Kezdőlépések:
 
+* Customer létrehozása (https://parabank.parasoft.com/parabank/register.htm)
+  * Username: dummy84 
+  * Password: Dummy84
+  * SSN: 1048
 * fájlok letöltése
 * allure telepítése (https://docs.qameta.io/allure/)
 * npm install

@@ -1,7 +1,7 @@
 Feature: Login test
   Scenario: Open the index page
     Given I start an intercept to: "IMAGES", method: "GET", alias: "images"
-    Given I open the next page: "index.htm"
+    Given I open the next page: "/index.htm"
     When I am waiting for "images"
     Then I check the URL contain: "index"
 
@@ -20,15 +20,16 @@ Feature: Login test
 
   Rule: Try to Login
     Scenario: Login (succsess)
-      Given I type in the input form: "username" within: "form" the next text: "mzsolt84"
-      Given I type in the input form: "password" within: "form" the next text: "Barry222"
+      Given I type in the input form: "username" within: "form" the next text: "dummy84"
+      Given I type in the input form: "password" within: "form" the next text: "Dummy84"
       When I push the next input button: "Log In"
-      Then I check the URL contain: "overview"
+      Then I check the URL contain: "/overview"
       And I push the next link button: "Log Out"
 
     Scenario: Login (fail)
-      Given I open the next page: "index.htm"
-      Given I type in the input form: "username" within: "form" the next text: "mzsolti"
+      Given Clear all cookies
+      Given I open the next page: "/index.htm"
+      Given I type in the input form: "username" within: "form" the next text: "dummy"
       Given I type in the input form: "password" within: "form" the next text: "BlueBarry"
       When I push the next input button: "Log In"
       Then I check the "Error!" text in the next html element: 'div[id="rightPanel"] > h1'

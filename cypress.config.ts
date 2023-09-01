@@ -60,7 +60,7 @@ export const defaultConfig = {
   defaultCommandTimeout: 9000,
   requestTimeout: 10000,
   responseTimeout: 10000,
-  pageLoadTimeout: 15000,
+  pageLoadTimeout: 16000,
   reporter: "../node_modules/mochawesome/src/mochawesome.js",
   reporterOptions: {
     reportDir: "cypress/results/mochawesome",
@@ -74,7 +74,7 @@ export const defaultConfig = {
   e2e: {
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
-    baseUrl: "https://parabank.parasoft.com/parabank/",
+    baseUrl: "https://parabank.parasoft.com/parabank",
     specPattern: "**/*.{feature,features}",
     supportFile: "cypress/support/e2e.js",
     reporter: require.resolve("@badeball/cypress-cucumber-preprocessor/pretty-reporter"),

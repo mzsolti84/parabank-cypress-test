@@ -1,5 +1,6 @@
 export enum EndPointsEnum {
   IMAGES = "**/images/**",
+  LOGIN = "**/services/bank/login/**",
 }
 
 export function getKeyByValue(value: string): string {

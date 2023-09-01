@@ -30,3 +30,8 @@ Then(
     }
   },
 )
+
+Given(
+  "Clear all cookies", () => {
+    cy.clearAllCookies()
+  })

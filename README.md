@@ -10,9 +10,10 @@
 
 ## Kezdőlépések:
 
+* Admin page -> Database clean and Data Access Mode: JDBC
 * Customer létrehozása (https://parabank.parasoft.com/parabank/register.htm)
-  * Username: dummy84 
-  * Password: Dummy84
+  * Username: dummyCy84 
+  * Password: DummyCy84
   * SSN: 1048
 * fájlok letöltése
 * allure telepítése (https://docs.qameta.io/allure/)

@@ -39,6 +39,7 @@ declare global {
       getInputContainer(name: string): Chainable<Element>
       clickOut(): Chainable<Element>
       getForm(name: string): Chainable<Element>
+      getTable(id?: string, headOrBody?: string): Chainable<Element>
     }
   }
 }

@@ -17,7 +17,7 @@
 import "./commands"
 import "@shelex/cypress-allure-plugin"
 
-const DELAY_DEFAULT = 750
+const DELAY_DEFAULT = 500
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
@@ -27,14 +27,41 @@ Cypress.Commands.add("clickOut", function () {
 })
 
 Cypress.Commands.add("getButton", (buttonName) => {
-    // eslint-disable-next-line cypress/no-unnecessary-waiting
-    return cy.get("button").wait(DELAY_DEFAULT).contains(buttonName)
+  // eslint-disable-next-line cypress/no-unnecessary-waiting
+  return cy.get("button").wait(DELAY_DEFAULT).contains(buttonName)
 })
 
 Cypress.Commands.add("getInputContainer", (name) => {
-    return cy.get(`input[name="${name}"]`)
+  return cy.get(`input[name="${name}"]`)
 })
 
 Cypress.Commands.add("getForm", (name) => {
   return cy.get(`form[name~="${name}"]`)
+})
+
+// Cypress.Commands.add("getTable", (id, tbody) => {
+//   if (id != undefined) {
+//     if (tbody != undefined && tbody) {
+//       return cy.get(`table[id="${id}"]`).find("tbody")
+//     } else {
+//       return cy.get(`table[id="${id}"]`)
+//     }
+//   } else {
+//     if (tbody != undefined && tbody) {
+//       return cy.get(`table`).find("tbody")
+//     } else {
+//       return cy.get(`table`)
+//     }
+//   }
+// })
+
+Cypress.Commands.add("getTable", (id, headOrBody) => {
+  const tableSelector = id ? `table[id="${id}"]` : "table"
+
+  if (headOrBody) {
+    const hOrB = headOrBody === "head" ? "thead" : "tbody"
+    return cy.get(tableSelector).find(hOrB)
+  }
+
+  return cy.get(tableSelector)
 })

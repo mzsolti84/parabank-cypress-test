@@ -5,6 +5,7 @@ import allureWriter from "@shelex/cypress-allure-plugin/writer"
 
 let globalNumberOfItems = 0
 let globalNextId = ""
+let globalAccount = {}
 
 async function setupNodeEvents(
   on: Cypress.PluginEvents,
@@ -43,6 +44,12 @@ async function setupNodeEvents(
     getGlobalNextId: () => {
       return globalNextId
     },
+    setGlobalAccount: ({ balance, customerId, id, type }) => {
+      return (globalAccount = { balance, customerId, id, type })
+    },
+    getGlobalAccount: () => {
+      return globalAccount
+    },
   })
 
   // Make sure to return the config object as it might have been modified by the plugin.
@@ -54,7 +61,7 @@ export const defaultConfig = {
     allureReuseAfterSpec: true,
     environment: "",
     language: "eng",
-    COMMAND_DELAY: 1200,
+    COMMAND_DELAY: 750,
   },
   video: false,
   defaultCommandTimeout: 9000,

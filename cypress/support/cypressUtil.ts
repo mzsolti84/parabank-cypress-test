@@ -91,3 +91,7 @@ export const getBackendUrl = (endPoints: string): string => {
  export const xmlProperty = (xml: string, property: string) => {
     return Cypress.$(Cypress.$.parseXML(xml)).find(property).text()
   }
+
+ export const jsonProperty = (json: string, property: string) => {
+   return Cypress.$(JSON.parse(json)).find(property).text()
+ }

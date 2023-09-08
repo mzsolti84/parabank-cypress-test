@@ -1,0 +1,56 @@
+[{
+	"username": "superadmin",
+	"password": "43192475f95e3820fe441daaff7c84d9b73ca3a5afc7309ae03f783151b6b0976e4d68cd990f97ad0d65ca640d35a407199d6d7510f1dff5477b8cfce1531475"
+},
+{
+	"username": "testexpadm1",
+	"password": "ce81ee9b0bb7a3257bad7c2e7c019bd2abea3898d223157281e96b78a6421c85ad2666d472a06b30ba4f3d2e0b47138a25f069beff7060c062bc06f551f15b4c"
+},
+{	"username": "testprivcust1",
+	"password": "6c388842ef18afa9dffd0b4dd53a5fe6fc54eb57a7e8e7be1ee5b78cdb75c1e70bd198cd34993fbd8e809c4dc7010710b89d1f8e6ba6e09a04540ddb70efcaf1"
+},
+{
+	"username": "testprivcust2",
+	"password": "971ca4509423fd047b894df2e51f4c762dc1edf3263c181bf5545e0cd575e22d49d615000d04d8f83efec8d2d5cd47f274e6dad57686f3de26f4b38703dfa074"
+},
+{
+	"username": "testprivcust4",
+	"password": "e20683717c82dbbfc9757fb97891c8f33f2dac5034ff521b8fd1c3fcb274cb36cf797e11ae964f98f26bd56503bbc98d5dc910b52139331f99501610aab630a5"
+},
+{
+	"username": "TestSuperAdmin",
+	"password": "43192475f95e3820fe441daaff7c84d9b73ca3a5afc7309ae03f783151b6b0976e4d68cd990f97ad0d65ca640d35a407199d6d7510f1dff5477b8cfce1531475"
+},
+{
+	"username": "TestExpertAdmin",
+	"password": "7a1706ddd417dd3bf9b6ad0807647309461b419ef12480aac874464a462ef2336c971f802e79ba7f9336101eefac12165e9ef3c5deed4b3d8b2df26b847db181"
+},
+{
+	"username": "TestPrivateCustomer",
+	"password": "ecd7387740e20fb9843d61d462e0b34c90e1c04081783638e4699e36c1c4c7498f68e603998fee2604bbf4c4f7e4c83ae96e086f3cdbe752958dfdd22ed594c2"
+},
+{
+	"username": "TestPrivateCustomer2",
+	"password": "8b92552eb65ce60464bbbdf63c5842bda9f0388bfe268bc4f9250882e9aaf06515320bca465eac18e32f2efeefb2c511515442cf5410f4ceebc9b32872edebc5"
+},
+{
+	"username": "TestPrivateCustomer3",
+	"password": "56ae00ff48f4bf7bc259b88815fbcfb930e95a2360c88332faebbe9c6bdf0649814fc071fff3d616ff4155c57d2db8a6a3d58f2e614fe8f40d8f462f015cf2e5"
+},
+{
+	"username": "TestPublicInstitution",
+	"password": "c99e4710613c6f9138b5582045619ff95cea9f59457d63884458c1e933763994aeb270b2e039e1d5b5871f53ee7498c7895ef0c3274fce9f045b86239b2a33d2"
+},
+{
+	"username": "TestInstitutionAdmin",
+	"password": "4d0b24ccade22df6d154778cd66baf04288aae26df97a961f3ea3dd616fbe06dcebecc9bbe4ce93c8e12dca21e5935c08b0954534892c568b8c12b92f26a2448"
+},
+{
+	"username": "maganszemely",
+	"password": "e6b57c4f359592732584f63f7851e85a46819cb9d43799a3e635b0a2fde8a52a33bf26291be3aec85d390d148406783b0cbb2efbeaa6e2efcf79cb9725d8c807"
+},
+{
+	"username": "maganszemely2",
+	"password": "6ad0b43709556e35eb7063aa163ca2869194d3a9c052adfb347a96a0e68eb435a31cde8a73477667ab9a7072e5c03ef0da77db51ff1eb49250a6c89f0b91f6a0"
+}
+]

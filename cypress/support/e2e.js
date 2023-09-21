@@ -35,25 +35,13 @@ Cypress.Commands.add("getInputContainer", (name) => {
   return cy.get(`input[name="${name}"]`)
 })
 
+Cypress.Commands.add("getSelectBoxContainer", (name) => {
+  return cy.get(`select[name="${name}"]`)
+})
+
 Cypress.Commands.add("getForm", (name) => {
   return cy.get(`form[name~="${name}"]`)
 })
-
-// Cypress.Commands.add("getTable", (id, tbody) => {
-//   if (id != undefined) {
-//     if (tbody != undefined && tbody) {
-//       return cy.get(`table[id="${id}"]`).find("tbody")
-//     } else {
-//       return cy.get(`table[id="${id}"]`)
-//     }
-//   } else {
-//     if (tbody != undefined && tbody) {
-//       return cy.get(`table`).find("tbody")
-//     } else {
-//       return cy.get(`table`)
-//     }
-//   }
-// })
 
 Cypress.Commands.add("getTable", (id, headOrBody) => {
   const tableSelector = id ? `table[id="${id}"]` : "table"

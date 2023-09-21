@@ -1,4 +1,6 @@
 import { Then, Given, DataTable } from "@badeball/cypress-cucumber-preprocessor"
+import IAccountResponseBody from "../interface/responseBody/account-response-body"
+import { makeArrayFromString, makeStringArrayFromHTMLElements } from "../cypressUtil"
 
 Then("I check the next html element: {string}", (item: string) => {
   cy.get(item).should("be.exist")
@@ -26,10 +28,20 @@ Then("I check the next input form: {string} within: {string}", (name: string, wi
   }
 })
 
+Then("I check the next selectbox form: {string} within: {string}", (name: string, wi: string) => {
+  if (wi.trim() === "") {
+    cy.getSelectBoxContainer(name).should("be.exist")
+  } else {
+    cy.get(wi).within(() => {
+      cy.getSelectBoxContainer(name).should("be.exist")
+    })
+  }
+})
+
 Then("I check the {string} text in the next html element: {string}", (text: string, element: string) => {
   cy.get(element)
     .should("be.visible")
-    .then((element) => {
+    .then((element): string => {
       return element.text().trim()
     })
     .should("contain", text)
@@ -53,4 +65,32 @@ Then("I check the main menu items", (table: DataTable) => {
     })
 
   cy.get(`div[id="leftPanel"]`).find("ul").find("li").should("have.length", tableCount)
+})
+
+Then("I check the {int}. account ID", (n: number) => {
+  cy.task("getGlobalAccount").then((account: IAccountResponseBody) => {
+    cy.getTable("accountTable", "body")
+      .find("tr")
+      .eq(n - 1)
+      .find("td:first")
+      .then((data: JQuery<HTMLElement>): string => {
+        return data.text().trim()
+      })
+      .should("eq", account.id.toString())
+  })
+})
+
+Then("I check the first account's URL", () => {
+  cy.task("getGlobalAccount").then((account: IAccountResponseBody) => {
+    cy.url().should("include", "activity.htm?id=" + account.id.toString())
+  })
+})
+
+Given("I check the {string} selectbox next items: {string}", (name: string, items: string) => {
+  const vItems: Array<string> = makeArrayFromString(items)
+  cy.getSelectBoxContainer(name)
+    .find("option")
+    .then((elements) => {
+      expect(makeStringArrayFromHTMLElements(elements)).to.have.members(vItems)
+    })
 })

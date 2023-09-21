@@ -9,11 +9,11 @@ import { silentLogin } from "../../support/interface/common/login"
 let savedCookies: Array<any> = [{}]
 
 before(() => {
-  silentLogin("dummyCy84", "DummyCy84")
+  silentLogin("dummyCypress84", "DummyCypress84")
     .its("body")
     .then((response: string) => {
       if (response == "Invalid username and/or password")
-        throw new Error("You probably don't sign up before you run the test! Read the README.md file!")
+        throw new Error("You probably don't sign up before you run the test! Read the README.md file first!")
     })
 })
 

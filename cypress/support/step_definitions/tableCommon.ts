@@ -1,6 +1,6 @@
 import { DataTable, Then } from "@badeball/cypress-cucumber-preprocessor"
 
-Then("I check the table and its head", (table: DataTable) => {
+Then("I check the table and its heads", (table: DataTable) => {
   const tableCount = table.hashes().length
   cy.getTable("accountTable").should("be.exist").and("be.visible")
   cy.getTable("accountTable", "head")
@@ -35,5 +35,25 @@ Then("I check that the table has {string} {int} rows", (sw: string, howMany: num
           })
           break
       }
+    })
+})
+
+Then("I open the {int}. account", (n: number) => {
+    cy.getTable("accountTable", "body")
+      .find("tr")
+      .eq(n - 1)
+      .find("td:first")
+      .find("a")
+      .click()
+})
+
+Then("I check {string} division's table content:", (divName: string, table: DataTable) => {
+  cy.get("div")
+    .contains(divName)
+    .parent()
+    .within(() => {
+      table.hashes().forEach((item, index) => {
+        cy.getTable(null, "body").find("tr").eq(index).should("contain", item.row)
+      })
     })
 })

@@ -3,6 +3,9 @@ import { defaultConfig } from "./cypress.config"
 
 export default defineConfig({
   ...defaultConfig,
+  env: {
+    language: "hu",
+  },
   e2e: {
     ...defaultConfig.e2e,
     viewportWidth: 1920,

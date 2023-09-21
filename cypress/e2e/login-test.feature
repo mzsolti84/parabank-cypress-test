@@ -20,8 +20,8 @@ Feature: Login test
 
   Rule: Try to Login
     Scenario: Login (succsess)
-      Given I type in the input form: "username" within: "form" the next text: "dummyCy84"
-      Given I type in the input form: "password" within: "form" the next text: "DummyCy84"
+      Given I type in the input form: "username" within: "form" the next text: "dummyCypress84"
+      Given I type in the input form: "password" within: "form" the next text: "DummyCypress84"
       When I push the next input button: "Log In"
       Then I check the URL contain: "/overview"
       And I push the next link button: "Log Out"

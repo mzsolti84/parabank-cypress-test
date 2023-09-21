@@ -37,6 +37,7 @@ declare global {
     interface Chainable<Subject = any> {
       getButton(buttonName: string): Chainable<Element>
       getInputContainer(name: string): Chainable<Element>
+      getSelectBoxContainer(name: string): Chainable<Element>
       clickOut(): Chainable<Element>
       getForm(name: string): Chainable<Element>
       getTable(id?: string, headOrBody?: string): Chainable<Element>

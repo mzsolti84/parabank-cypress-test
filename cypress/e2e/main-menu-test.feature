@@ -6,8 +6,8 @@ Feature: Main menu test
     Then I check the URL contain: "index"
 
   Scenario: Login
-    Given I type in the input form: "username" within: "form" the next text: "dummyCy84"
-    Given I type in the input form: "password" within: "form" the next text: "DummyCy84"
+    Given I type in the input form: "username" within: "form" the next text: "dummyCypress84"
+    Given I type in the input form: "password" within: "form" the next text: "DummyCypress84"
     When I push the next input button: "Log In"
 
   Scenario: Test the main menu

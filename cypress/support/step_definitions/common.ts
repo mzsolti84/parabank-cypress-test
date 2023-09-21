@@ -38,7 +38,7 @@ Given("Clear all cookies", () => {
   cy.clearAllCookies()
 })
 
-Then("I save the accountID from {string} alias", (alias: string) => {
+Then("I save the account from {string} alias", (alias: string) => {
   cy.wait(`@${alias}`)
     .its("response")
     .its("body")
@@ -48,7 +48,7 @@ Then("I save the accountID from {string} alias", (alias: string) => {
 })
 
 Then("I check customer ID and compare the customerID with the result of the back-end call", () => {
-  silentLogin("dummyCy84", "DummyCy84")
+  silentLogin("dummyCypress84", "DummyCypress84")
     .its("body")
     .then((response: string) => {
       const idFromLogin = xmlProperty(response, "id")
